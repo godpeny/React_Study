@@ -1,23 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './styles/main.scss';
-import App from './components/App';
+import './index.css';
+import App from './containers/App.js';
 import * as serviceWorker from './serviceWorker';
 
-import modules from './modules';                // combinedReducer == reducer
+// redux 불러오기
 import {createStore} from 'redux';
+import reducers from './reducers';
 import {Provider} from 'react-redux';
 
+// store 생성(Redux DevTools 사용)
 /* eslint-disable no-underscore-dangle */
 const store = createStore(
-    modules, /* preloadedState, */
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-   );
+    reducers, /* preloadedState, */
+   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  );
 /* eslint-enable */
 
+
 ReactDOM.render(
-    <Provider store = {store}>
-        <App />
+    <Provider store={store}>
+        <App /> 
     </Provider>,
  document.getElementById('root'));
 
