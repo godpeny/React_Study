@@ -1,8 +1,10 @@
 import React from 'react';
 import {Route} from 'react-router-dom';
 
-import {Home,About,Posts} from './pages';
+//import {Home,About,Posts} from './pages';
+import {Home,About,Posts} from './pages/index.async.js';
 import Menu from './components/Menu.js';
+
 
 const App = () => {
   return (
